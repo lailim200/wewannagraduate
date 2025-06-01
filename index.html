@@ -1,0 +1,20 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SchedSync</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <h1>My Schedule</h1>
+  <form id="event-form">
+    <input type="text" id="event-title" placeholder="Event title" required />
+    <input type="time" id="event-time" required />
+    <button type="submit">Add Event</button>
+  </form>
+  <div id="calendar"></div>
+</body>
+</html>
