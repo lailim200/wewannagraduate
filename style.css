@@ -1,0 +1,13 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+form {
+  margin-bottom: 20px;
+}
+#calendar div {
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
