@@ -4,10 +4,15 @@ This project is a collaborative scheduling app that allows users to share their 
 
 ScheduleSync/
 ├── index.html # Main HTML file that builds the page layout
+
 ├── style.css # CSS file that styles the calendar and layout
+
 ├── app.js # Main JavaScript logic for adding and viewing events
+
 ├── firebase-config.js # Sets up the Firebase connection to Firestore
+
 ├── auth.js (planned) # Will manage login and authentication using Firebase
+
 ├── suggestions.js (planned)# Will handle sending/responding to event suggestions
 
 ### File Explanations
