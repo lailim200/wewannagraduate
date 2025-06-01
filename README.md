@@ -3,6 +3,7 @@
 This project is a collaborative scheduling app that allows users to share their calendar with friends, suggest group events, and respond to scheduling requests in real time. Below is an overview of the file structure and what each part does:
 
 ScheduleSync/
+
 ├── index.html # Main HTML file that builds the page layout
 
 ├── style.css # CSS file that styles the calendar and layout
