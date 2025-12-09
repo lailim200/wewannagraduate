@@ -1,130 +1,197 @@
 
-# ScheduleSync 📅
 
-A web-based planner that helps students coordinate schedules and find common free time to meet.  
-This README provides **all steps to re-generate the project** after cloning, per evaluation criteria.
+# **ScheduleSync 📅**
+
+A web-based scheduling platform that helps students coordinate plans, share availability, and find common free time.
+This README provides all instructions required to **re-generate the system from scratch** after cloning.
 
 ---
 
-## 1. Rebuild Instructions
+# **1. Project Overview**
+
+ScheduleSync is a realtime planning tool that allows users to:
+
+* Add personal time blocks
+* Share free/busy availability with friends
+* Suggest events
+* Accept or decline invitations
+* View overlapping free time instantly
+
+The system uses **React** for the frontend and **Firebase** for authentication, database, and realtime synchronization.
+
+---
+
+# **2. Repository Setup**
+
+## **Clone the Repository**
 
 ```bash
 git clone https://github.com/lailim200/wewannagraduate.git
 cd wewannagraduate
-npm install
-````
+```
 
 ---
 
-## 2. Run Instructions (with Proto-system setup)
+# **3. How to Install**
 
-### ① Environment Setup
+Install all required dependencies:
 
-Create a file named `.env.local` at the root.
-
-Paste this inside (example):
-
-```env
-REACT_APP_FIREBASE_API_KEY=AIzaSyDg...
-REACT_APP_FIREBASE_AUTH_DOMAIN=schedulesync.firebaseapp.com
-REACT_APP_FIREBASE_PROJECT_ID=schedulesync
-REACT_APP_FIREBASE_STORAGE_BUCKET=schedulesync.appspot.com
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=...
-REACT_APP_FIREBASE_APP_ID=...
+```bash
+npm install
 ```
 
-You can use our demo credentials (in `.env.example`) or insert your own Firebase project settings.
+---
 
-### ② Start the Web App
+# **4. Environment Setup**
+
+Create a file named **`.env.local`** in the project root.
+
+Copy from `.env.example` or use your own Firebase configuration:
+
+```env
+REACT_APP_FIREBASE_API_KEY=xxxx
+REACT_APP_FIREBASE_AUTH_DOMAIN=xxxx
+REACT_APP_FIREBASE_PROJECT_ID=xxxx
+REACT_APP_FIREBASE_STORAGE_BUCKET=xxxx
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=xxxx
+REACT_APP_FIREBASE_APP_ID=xxxx
+```
+
+This environment file is required for authentication, database access, and hosting.
+
+---
+
+# **5. How to Run (Development Server)**
+
+Start the development server:
 
 ```bash
 npm start
 ```
 
-Visit: [http://localhost:3000](http://localhost:3000)
-You can now test the app with:
+Then open:
 
-* Google login (via Firebase)
-* Dummy test account (in report or shared via email)
-* Creating time blocks or events to test sync
+```
+http://localhost:3000
+```
 
----
+You may test with:
 
-## 3. System Summary
-
-ScheduleSync allows users to:
-
-* Add personal time blocks to a calendar
-* Share availability with friends
-* Suggest group events
-* Accept or reject invitations
-* View overlapping free time
-
-All updates sync in **real time** through Firebase.
+* Google login (Firebase)
+* Sample user accounts (provided in project report)
+* Creating time blocks and events to verify realtime sync
 
 ---
 
-## 4. Data and Sample
+# **6. How to Build (Production Build)**
 
-### Proto-data structure:
+To generate an optimized production build:
 
-| Collection  | Contents                         |
-| ----------- | -------------------------------- |
-| `users`     | Each user’s name, UID, and email |
-| `schedules` | Personal time blocks             |
-| `events`    | Group events                     |
-| `shares`    | Friend connections               |
+```bash
+npm run build
+```
 
-To test the app, use the pre-created user and events or make your own.
+This outputs a compiled `build/` directory ready for deployment.
 
----
+To preview the production build locally (optional):
 
-## 5. Research / Experimental Result
+```bash
+npm install -g serve
+serve -s build
+```
 
-If graded as part of a research track:
+Then visit:
 
-* Experimental data: Firebase read/write speed, real-time sync latency
-* Simulation: Friend A invites Friend B → accept/reject scenario tested
-* Result files (screenshots/logs): Included in final report
-
----
-
-## 6. Open Source Usage
-
-All open source libraries are listed in `package.json`.
-
-Key libraries:
-
-* React
-* Firebase SDK
-* React Router DOM
-* date-fns
-* ESLint, Prettier
-* Vite or CRA (based on template used)
-
-These are all free to use and install with `npm install`.
+```
+http://localhost:3000
+```
 
 ---
 
-## 7. Project Structure
+# **7. How to Test**
+
+### **Functionality Testing**
+
+1. Log in using Google or a test user
+2. Create time blocks in the calendar
+3. Open a second browser or account
+4. Observe realtime synchronization
+5. Create an event → invite friend → accept/reject
+6. Confirm that the result updates instantly for all participants
+
+### **Realtime Behavior Check**
+
+* Measure sync latency using browser console timestamps
+* Confirm that updates propagate through Firestore listeners
+
+---
+
+# **8. Project Structure**
 
 ```
 public/
-  index.html            # Main HTML file
+  index.html
 src/
-  components/           # Reusable calendar/event modules
-  pages/                # Home, Calendar, FriendList, etc.
-  utils/                # Firebase config, conflict checker
-  styles/               # CSS and theme settings
-  App.js                # Root app with routing
-  index.js              # React entry point
+  components/        # UI modules (calendar grid, event cards)
+  pages/             # Calendar, Home, FriendList, EventPage
+  utils/             # Firebase config + helper functions
+  styles/            # CSS files
+  App.js             # Routing + layout
+  index.js           # React entry point
+.env.example         # Firebase config template
+package.json         # Dependencies and scripts
 ```
 
 ---
 
-## 8. Script or Automation (Optional)
+# **9. Data Description (Sample / Proto Data)**
 
-Although we don’t use `makefile`, the following npm scripts are defined:
+ScheduleSync uses Firebase Firestore.
+
+### **Collections Used**
+
+| Collection  | Description                                |
+| ----------- | ------------------------------------------ |
+| `users`     | Stores email, UID, display name            |
+| `schedules` | All personal time blocks                   |
+| `events`    | Event metadata + participants + responses  |
+| `shares`    | Friend connections and sharing permissions |
+
+### **Sample Data Behavior**
+
+* Creating a time block writes to `schedules/{uid}`
+* Proposing an event writes to `events/{eventId}`
+* Accept/decline updates the event’s participant state
+
+This structure allows realtime updates across accounts.
+
+---
+
+# **10. Open Source Components**
+
+ScheduleSync uses the following open-source libraries:
+
+### **Frontend**
+
+* **React** – UI framework
+* **React Router DOM** – Routing
+* **date-fns** – Time calculations
+
+### **Backend**
+
+* **Firebase Auth** – Login & identity
+* **Firebase Firestore** – Realtime DB
+* **Firebase Hosting** – Deployment (optional)
+
+### **Dev Tools**
+
+* ESLint, Prettier (formatting & linting)
+
+All dependencies are listed in `package.json`.
+
+---
+
+# **11. NPM Scripts**
 
 ```json
 "scripts": {
@@ -135,20 +202,32 @@ Although we don’t use `makefile`, the following npm scripts are defined:
 }
 ```
 
-To build:
+Common commands:
 
 ```bash
-npm run build
+npm start     # run development server
+npm run build # create production build
+npm test      # run tests (if implemented)
 ```
 
 ---
 
-## 9. License & Author Info
+# **12. Troubleshooting**
 
-* License: ISC
-* Authors: Team 23, "졸업하고싶죠"
-* Contact: via report or GitHub contributors section
+### **Common Issues**
+
+| Issue                             | Solution                                         |
+| --------------------------------- | ------------------------------------------------ |
+| Environment variables not loading | Ensure `.env.local` exists in project root       |
+| Firebase errors                   | Re-check API keys & Firestore rules              |
+| Realtime sync not updating        | Refresh listeners or check Firestore permissions |
+| “npm start” fails                 | Delete `node_modules` → `npm install` again      |
 
 ---
+
+# **13. Authors**
+
+Team 23 • 졸업하고싶죠
+Makhmud Lailim · Oskonbai kyzy Asema
 
 
