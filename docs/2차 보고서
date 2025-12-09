@@ -1,0 +1,238 @@
+# ScheduleSync – Second Project Report (2차 보고서)
+
+## 1. Project Name and Team Information
+
+**Project Name**: ScheduleSync  
+**Team Name**: 졸업하고싶죠  
+**Team Number**: 23
+
+**Members:**
+
+- **Makhmud Lailim (Team Leader)**  
+  Project management, scheduling, report writing, meetings with advisor, requirements definition, verification, communication
+
+- **Oskonbai kyzy Asema**  
+  Fullstack developer, Firebase integration, UI/UX prototyping, technical implementation, testing/debugging
+
+---
+
+## 2. Project Summary and Background
+
+### Objectives & Scope
+
+- Make planning social activities among students faster and easier  
+- Allow users to share their availability and suggest group events from inside the calendar  
+- Support simple yes/no workflows for group coordination (accept/decline)  
+- Target users: Ewha Womans University Computer Science students and their friends  
+- Focus on real-time free-time matching and group proposal features
+
+### Necessity & Background
+
+- **Problem**: University students often struggle to plan meetings due to busy schedules and poor coordination tools. Messages get lost in group chats, leading to confusion, double bookings, or canceled plans.
+- **Existing Tools**: Google Calendar and KakaoTalk are not designed for group social planning; either too individual-focused or cluttered.
+- **Gap**: No tool gives a clear, mutual view of free time among friends or a seamless workflow for proposing/accepting group activities in a social context.
+
+---
+
+## 3. Target Users & Research Basis
+
+### Target Users
+
+- Ewha Womans University Computer Science students  
+- Students in project-based courses and club activities  
+- Groups who frequently plan meals, meetings, or outings
+
+### User Research (Survey/Interviews)
+
+- Peers reported issues with:
+  - Clashing schedules  
+  - Confusing, messy group chats (KakaoTalk, etc.)  
+  - Needing multiple apps to agree on a single plan
+
+- **Key Pain Points**:
+  - Inability to easily see mutual availability  
+  - Frustration from inefficient, repetitive messaging
+
+---
+
+## 4. Problems, Needs, and Proposed Solution
+
+### Key Problems to Solve
+
+1. Difficult to find compatible times for group activities  
+2. Excessive, repetitive back-and-forth messaging  
+3. No easy way to see friends' real-time availability  
+4. No built-in group plan proposal/acceptance feature  
+5. Many social plans collapse due to "coordination friction"
+
+### User Needs
+
+- A simple, shared calendar for easy visibility  
+- Instant updates when friends accept or decline events  
+- Reduced reliance on messaging apps  
+- Real-time, always-synced updates across devices  
+- Lightweight, student-friendly, privacy-respecting tool
+
+### Proposed Solution
+
+**ScheduleSync** is a browser-based web app offering:
+
+- Calendar sharing with friends  
+- Real-time visibility of free/busy slots  
+- One-click group activity suggestions with in-app responses  
+- Built-in coordination inside the calendar interface  
+- Powered by Firebase for real-time sync and sharing  
+- Designed for casual, fast social planning
+
+---
+
+## 5. Comparison with Existing Projects/Services
+
+| Feature               | Google Calendar | KakaoTalk | ScheduleSync |
+|----------------------|------------------|-----------|---------------|
+| Friend-based sharing | ✗               | Partial   | ✅            |
+| Real-time updates    | ✅              | ✗         | ✅            |
+| Event suggestion     | ✗               | ✗         | ✅            |
+| Social focus         | ✗               | ✅        | ✅            |
+
+### ScheduleSync Advantages
+
+- Real-time, friend-based free time sharing  
+- Event suggestions and responses within calendar  
+- Designed for student and social group use cases  
+- All-in-one workflow minimizes confusion
+
+---
+
+## 6. Main Features
+
+| # | Feature Name            | Description |
+|---|-------------------------|-------------|
+| 1 | Personal Weekly Planner | Manage events, classes, time blocks |
+| 2 | Friend-Based Sharing    | Choose which friends can see your status |
+| 3 | Group Event Suggestion  | Propose events with selected invitees |
+| 4 | One-Click Response      | Accept/decline events with one tap |
+| 5 | Real-Time Updates       | Firebase sync for all users |
+| 6 | Lightweight Web UI      | Runs in browser, no installation |
+| 7 | Privacy Controls        | Customize visibility settings |
+
+---
+
+## 7. System Design & Implementation
+
+### 7.1 Software Architecture
+
+- **Frontend**:  
+  Built with ReactJS. Pages for login, schedule management, event suggestion, and friend handling.
+
+- **Backend**:  
+  Firebase Firestore stores schedules, events, friend data  
+  Firebase Auth for login  
+  Firebase Hosting + Vercel for deployment  
+  GitHub for version control
+
+#### Diagram Explanation
+
+1. **Schedule Management**: Browser → ReactJS → Firebase  
+2. **Event & Friend Management**: ReactJS handles user actions → Firebase triggers real-time updates
+
+---
+
+### 7.2 Data Flow
+
+- Users log in and manage time blocks, events, and friends  
+- Data stored in Firebase Firestore  
+- Friend requests and event proposals trigger real-time updates  
+- Invitees can accept/decline and everyone sees live changes
+
+---
+
+### 7.3 Main Screens & Functions
+
+- **Home**: Entry screen after login  
+- **Scheduler**: Weekly planner with time blocks  
+- **Event Page**: Create/edit group events  
+- **Friend List**: Send/manage friend requests  
+- **Customized Events**: Title, time, participants, synced to Firebase  
+- **Time Blocks**: Define availability; used for group match-making
+
+---
+
+### 7.4 Expected Effects
+
+- Improves group coordination with live updates  
+- Quick setup of friend connections  
+- Cuts down messaging clutter  
+- Enables smoother group and club planning
+
+---
+
+### 7.5 Unique Aspects & Improvements
+
+- All-in-one solution combining scheduling and group planning  
+- Real-time friend-based features  
+- Browser-based: no install required  
+- Designed specifically for students and social groups
+
+---
+
+## 8. Development Progress & Milestones
+
+### Development Phases
+
+- **Phase 1**:
+  - GitHub repo initialized  
+  - React project structure created  
+  - Firebase initialized and connected
+
+- **Phase 2**:
+  - Event creation and personal calendar built  
+  - Firebase Auth basic login  
+  - Events displayed for logged-in user
+
+- **Phase 3**:
+  - Friend list logic in progress  
+  - Group event suggestions + responses  
+  - UI polishing and sync improvements
+
+### Current Status
+
+- Initial UI/UX and backend modules in place  
+- Firebase backend configured  
+- Feature modules organized  
+- Low-fidelity wireframes completed  
+- No final UI yet — next step is feature development  
+- Planned: mobile polish, friend search, notifications
+
+---
+
+## 9. Verification & Testing
+
+- Firebase real-time updates tested  
+- Group event creation/edit flows verified  
+- Functional deployment on Vercel  
+- Works across Chrome, Safari  
+- Planned: deeper testing and mobile responsiveness improvements
+
+---
+
+## 10. Team Roles
+
+| Name             | Roles & Responsibilities                                  |
+|------------------|-----------------------------------------------------------|
+| Makhmud Lailim   | Team lead, planning, documentation, advisor comms         |
+| Asema Oskonbai   | Fullstack dev, UI/UX, Firebase, implementation, testing   |
+
+---
+
+## 11. References
+
+- Google Calendar (UX reference)  
+- KakaoTalk (social messaging flow)  
+- Firebase Docs, ReactJS Docs
+
+---
+
+## 12. Conclusion
+
+ScheduleSync delivers core scheduling and group coordination features with real-time visibility, direct event proposal, and friend-based privacy. The system is tailored for students, lightweight to use, and technically validated. Future steps include full UI completion, mobile responsiveness, and expanded testing.
