@@ -1,0 +1,338 @@
+/* Normal mode - default colors */
+body.accessibility-normal {
+  /* Uses default app styles */
+}
+
+/* Protanopia mode - Red-blind friendly */
+body.accessibility-protanopia {
+  --primary-color: #0066cc;
+  --secondary-color: #ffaa00;
+  --success-color: #0099cc;
+  --warning-color: #ff9900;
+  --error-color: #cc6600;
+  --available-color: #0088ff;
+  --busy-color: #444444;
+  --tentative-color: #ffd700;
+  filter: contrast(1.1);
+}
+
+body.accessibility-protanopia .time-slot.available,
+body.accessibility-protanopia .event-available {
+  background: repeating-linear-gradient(
+    45deg,
+    #0088ff,
+    #0088ff 10px,
+    #00aaff 10px,
+    #00aaff 20px
+  ) !important;
+  border: 3px solid #0066cc !important;
+  box-shadow: inset 0 0 0 2px white !important;
+}
+
+body.accessibility-protanopia .time-slot.busy,
+body.accessibility-protanopia .event-busy {
+  background: repeating-linear-gradient(
+    -45deg,
+    #444444,
+    #444444 10px,
+    #666666 10px,
+    #666666 20px
+  ) !important;
+  border: 3px solid #222222 !important;
+  box-shadow: inset 0 0 0 2px white !important;
+}
+
+body.accessibility-protanopia .time-slot.tentative,
+body.accessibility-protanopia .event-tentative {
+  background: repeating-linear-gradient(
+    90deg,
+    #ffd700,
+    #ffd700 15px,
+    #ffed4e 15px,
+    #ffed4e 30px
+  ) !important;
+  border: 3px solid #ccaa00 !important;
+  box-shadow: inset 0 0 0 2px white !important;
+}
+
+/* Deuteranopia mode - Green-blind friendly */
+body.accessibility-deuteranopia {
+  --primary-color: #0066ff;
+  --secondary-color: #ff8800;
+  --success-color: #0099ff;
+  --warning-color: #ff9900;
+  --error-color: #dd4400;
+  --available-color: #0077ff;
+  --busy-color: #884400;
+  --tentative-color: #ffbb33;
+  filter: saturate(1.2);
+}
+
+body.accessibility-deuteranopia .time-slot.available,
+body.accessibility-deuteranopia .event-available {
+  background: radial-gradient(circle at 20% 50%, #0077ff 0%, #0099ff 100%) !important;
+  border: 3px dotted #0055cc !important;
+  box-shadow: 0 0 0 2px #b3d9ff inset !important;
+}
+
+body.accessibility-deuteranopia .time-slot.busy,
+body.accessibility-deuteranopia .event-busy {
+  background: radial-gradient(circle at 80% 50%, #884400 0%, #aa6622 100%) !important;
+  border: 3px dotted #662200 !important;
+  box-shadow: 0 0 0 2px #ffccaa inset !important;
+}
+
+body.accessibility-deuteranopia .time-slot.tentative,
+body.accessibility-deuteranopia .event-tentative {
+  background: radial-gradient(circle at 50% 50%, #ffbb33 0%, #ffdd77 100%) !important;
+  border: 3px dotted #dd9900 !important;
+  box-shadow: 0 0 0 2px #fff4cc inset !important;
+}
+
+/* Tritanopia mode - Blue-blind friendly */
+body.accessibility-tritanopia {
+  --primary-color: #cc0066;
+  --secondary-color: #00cc99;
+  --success-color: #00aa88;
+  --warning-color: #ff5555;
+  --error-color: #dd0033;
+  --available-color: #00ddbb;
+  --busy-color: #dd0055;
+  --tentative-color: #ff8899;
+  filter: brightness(1.05);
+}
+
+body.accessibility-tritanopia .time-slot.available,
+body.accessibility-tritanopia .event-available {
+  background: linear-gradient(
+    135deg,
+    #00ddbb 25%,
+    transparent 25%,
+    transparent 50%,
+    #00ddbb 50%,
+    #00ddbb 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  background-size: 20px 20px !important;
+  background-color: #00ffcc !important;
+  border: 3px double #008866 !important;
+}
+
+body.accessibility-tritanopia .time-slot.busy,
+body.accessibility-tritanopia .event-busy {
+  background: linear-gradient(
+    45deg,
+    #dd0055 25%,
+    transparent 25%,
+    transparent 50%,
+    #dd0055 50%,
+    #dd0055 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  background-size: 20px 20px !important;
+  background-color: #ff3377 !important;
+  border: 3px double #990033 !important;
+}
+
+body.accessibility-tritanopia .time-slot.tentative,
+body.accessibility-tritanopia .event-tentative {
+  background: repeating-linear-gradient(
+    0deg,
+    #ff8899,
+    #ff8899 5px,
+    #ffaabb 5px,
+    #ffaabb 10px
+  ) !important;
+  border: 3px double #dd5577 !important;
+}
+
+/* High Contrast mode */
+body.accessibility-high-contrast {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --success-color: #00ff00;
+  --warning-color: #ffff00;
+  --error-color: #ff0000;
+  --available-color: #00ff00;
+  --busy-color: #ff0000;
+  --tentative-color: #ffff00;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.accessibility-high-contrast * {
+  border-color: #000000 !important;
+}
+
+body.accessibility-high-contrast .time-slot.available,
+body.accessibility-high-contrast .event-available {
+  background: #ccffcc !important;
+  border: 3px solid #00ff00 !important;
+  color: #000000 !important;
+}
+
+body.accessibility-high-contrast .time-slot.busy,
+body.accessibility-high-contrast .event-busy {
+  background: #ffcccc !important;
+  border: 3px solid #ff0000 !important;
+  color: #000000 !important;
+}
+
+body.accessibility-high-contrast .time-slot.tentative,
+body.accessibility-high-contrast .event-tentative {
+  background: #ffffcc !important;
+  border: 3px solid #ffff00 !important;
+  color: #000000 !important;
+}
+
+body.accessibility-high-contrast button,
+body.accessibility-high-contrast input,
+body.accessibility-high-contrast select {
+  border: 2px solid #000000 !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.accessibility-high-contrast button:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.accessibility-high-contrast a {
+  color: #0000ff !important;
+  text-decoration: underline !important;
+}
+
+/* Screen Reader mode - Enhanced focus indicators */
+body.screen-reader-mode *:focus {
+  outline: 4px solid #ff6600 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.3) !important;
+}
+
+body.screen-reader-mode button:focus,
+body.screen-reader-mode a:focus,
+body.screen-reader-mode input:focus {
+  outline: 4px solid #ff6600 !important;
+  outline-offset: 2px !important;
+}
+
+/* Add visual patterns for colorblind modes */
+body.accessibility-protanopia .time-slot.available::before,
+body.accessibility-protanopia .event-available::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+body.accessibility-protanopia .time-slot.busy::before,
+body.accessibility-protanopia .event-busy::after {
+  content: '✗';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+body.accessibility-protanopia .time-slot.tentative::before,
+body.accessibility-protanopia .event-tentative::after {
+  content: '?';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+body.accessibility-deuteranopia .time-slot.available::before,
+body.accessibility-deuteranopia .event-available::after {
+  content: '●';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 40px;
+  color: rgba(0, 50, 200, 0.2);
+  z-index: 0;
+}
+
+body.accessibility-deuteranopia .time-slot.busy::before,
+body.accessibility-deuteranopia .event-busy::after {
+  content: '■';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 36px;
+  color: rgba(100, 30, 0, 0.25);
+  z-index: 0;
+}
+
+body.accessibility-deuteranopia .time-slot.tentative::before,
+body.accessibility-deuteranopia .event-tentative::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 36px;
+  color: rgba(200, 150, 0, 0.2);
+  z-index: 0;
+}
+
+body.accessibility-tritanopia .time-slot.available::before,
+body.accessibility-tritanopia .event-available::after {
+  content: '★';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 32px;
+  color: rgba(0, 150, 120, 0.3);
+  z-index: 0;
+}
+
+body.accessibility-tritanopia .time-slot.busy::before,
+body.accessibility-tritanopia .event-busy::after {
+  content: '▲';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 36px;
+  color: rgba(200, 0, 80, 0.3);
+  z-index: 0;
+}
+
+body.accessibility-tritanopia .time-slot.tentative::before,
+body.accessibility-tritanopia .event-tentative::after {
+  content: '♦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 36px;
+  color: rgba(255, 100, 140, 0.3);
+  z-index: 0;
+}

@@ -1,0 +1,47 @@
+.accessibility-floating-button {
+  position: fixed;
+  bottom: 30px; /* fallback */
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  /* Account for iOS/Android safe areas when toolbars overlap */
+  bottom: calc(30px + env(safe-area-inset-bottom));
+  /* Ensure it never blocks page scrolling gestures */
+  touch-action: manipulation;
+}
+
+.accessibility-floating-button:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.accessibility-floating-button:active {
+  transform: scale(0.95);
+}
+
+.accessibility-floating-button:focus {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accessibility-floating-button {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
