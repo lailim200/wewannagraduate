@@ -1,0 +1,149 @@
+
+
+README.install
+ScheduleSync
+Team 23 졸업하고싶죠
+
+---
+
+1. Project Overview
+
+ScheduleSync is a web based social scheduling application designed to help users coordinate group events by sharing availability in real time.
+
+Unlike traditional personal calendar tools, ScheduleSync focuses on friend based scheduling. Users can register their availability, propose group events, and accept or decline invitations directly within the application, reducing the need for repeated messaging through external chat platforms.
+
+This submission represents a functional web prototype demonstrating real time synchronization and social event coordination.
+
+---
+
+2. System Requirements
+
+To use ScheduleSync, the following environment is required.
+
+Operating system
+macOS, Windows, or Linux
+
+Software requirements
+A modern web browser such as Chrome, Edge, or Safari
+Internet connection is required due to Firebase backend services
+
+Local installation using Node.js is optional and not required for evaluation.
+
+---
+
+3. How to Access and Evaluate the Application
+
+There are **two supported ways** to access ScheduleSync.
+
+### Option 1. Recommended Method. Deployed Web Version
+
+This is the **recommended evaluation method**.
+No local setup is required.
+
+Web application URL
+[https://shedulesync.vercel.app/](https://shedulesync.vercel.app/)
+
+Evaluators are strongly encouraged to use this method for convenience and reliability.
+
+---
+
+### Option 2. Local Execution Using React Development Server
+
+
+---
+
+4. Local Installation Instructions (Optional)
+
+### Step 1. Extract the ZIP file
+
+Unzip the submitted file to Visual Studio Code
+
+---
+
+### Step 2. Install dependencies
+
+Open a terminal in the project root directory and run:
+
+npm install
+
+Then, run the following command:
+
+npm start
+
+Then open a browser and navigate to:
+
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+5. Test Account Information
+
+To allow immediate access without account creation, a test account is provided.
+
+Login method
+Google account sign in
+
+Test account email
+[whileaqgaloo@gmail.com](mailto:whileaqgaloo@gmail.com)
+
+Test account password
+ScheduleSync123
+
+Important note
+Because this account uses Google authentication, the evaluator must sign in through the Google login popup using the credentials above.
+
+---
+
+6. Basic Usage Guide
+
+Recommended evaluation flow.
+
+Access the web application using the deployed URL
+Log in using the provided Google test account
+Register personal availability on the calendar
+View shared availability
+Propose a group event by selecting a time slot
+Accept or decline event invitations
+Observe real time updates reflected immediately in the interface
+
+A detailed, step by step user guide is provided in the separate User Manual PDF submission.
+
+---
+
+7. Backend and Data Information
+
+ScheduleSync uses Firebase as its backend infrastructure.
+
+Backend services used
+Firebase Authentication
+Firebase Firestore
+Firebase Hosting
+
+User schedules, event proposals, and responses are synchronized in real time using Firestore.
+
+No sensitive credentials are included in this submission.
+Only example configuration values are provided via `.env.example`.
+
+---
+
+8. Notes for Evaluators
+
+This project is a prototype developed for an academic course submission.
+
+The primary focus is on demonstrating social scheduling logic, real time synchronization, and user interaction flow rather than full production deployment.
+
+For evaluation, use of the deployed web version is strongly recommended.
+
+If any issues occur during access or evaluation, please refer to this README.install for guidance.
+
+---
+
+9. Team Information
+
+Team name
+졸업하고싶죠
+
+Team members
+Makhmud Lailim
+Oskonbai kyzy Asema
+
