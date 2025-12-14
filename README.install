@@ -56,13 +56,13 @@ Evaluators are strongly encouraged to use this method for convenience and reliab
 
 ### Step 1. Extract the ZIP file
 
-Unzip the submitted file to Visual Studio Code
+Unzip the submitted file and open it in Visual Studio Code
 
 ---
 
 ### Step 2. Install dependencies
 
-Open a terminal in the project root directory and run:
+Open a terminal in the project root directory in Visual Studio Code and run:
 
 npm install
 
